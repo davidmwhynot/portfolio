@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/davidmwhynot/portfolio/issues"
   },
-  "homepage": "https://github.com/davidmwhynot/portfolio#readme"
+  "homepage": "https://github.com/davidmwhynot/portfolio#readme",
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2"
+  }
 }
