@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
+      integrity="rCcl0/HQvbvpTrAC/9W17ZQ8hWQl3IaM/oJPOo8pJpBXRGPrTw9zaYtrsPeFDvfV"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="main">
+      <section id="hero" class="hero" data-toggle="true">
+        <svg src="logo.svg" class="hero-img"></svg>
+
+        <div>
+          <ul>
+            <li>
+              <a href="https://github.com/davidmwhynot" target="_blank">
+                <svg src="github.svg"></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://codepen.io/davidmwhynot" target="_blank">
+                <svg src="codepen.svg"></svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/david-whynot"
+                target="_blank"
+              >
+                <svg src="linkedin.svg"></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <h1>Full Stack Web Developer</h1>
+
+        <div class="images">
+          <img src="media/mockup1.png" alt="iPhone sample design mockup 1" />
+          <img src="media/mockup2.png" alt="iPhone sample design mockup 2" />
+          <img src="media/mockup3.png" alt="iPhone sample design mockup 3" />
+        </div>
+      </section>
+      <section id="work" class="work" data-toggle="false">
+        <i class="x"></i>
+        <h1>Work</h1>
+      </section>
+      <section id="skills" class="skills" data-toggle="false">
+        <i class="x"></i>
+        <h1>Skills</h1>
+      </section>
+      <section id="resume" class="resume" data-toggle="false">
+        <i class="x"></i>
+        <h1>Résumé</h1>
+      </section>
+      <section id="contact" class="contact" data-toggle="false">
+        <i class="x"></i>
+        <h1>Contact</h1>
+      </section>
+    </div>
+    <nav>
+      <ul>
+        <li id="workBtn"><a>My Work</a></li>
+        <li id="skillsBtn"><a>Skills</a></li>
+        <li id="resumeBtn"><a>Résumé</a></li>
+        <li id="contactBtn"><a>Contact</a></li>
+      </ul>
+    </nav>
+
+    <script type="text/javascript">
+      // get sections
+      var sections = {
+        hero: document.getElementById("hero"),
+        work: document.getElementById("work"),
+        skills: document.getElementById("skills"),
+        resume: document.getElementById("resume"),
+        contact: document.getElementById("contact")
+      };
+
+      // get buttons
+      var buttons = {
+        work: document.getElementById("workBtn"),
+        skills: document.getElementById("skillsBtn"),
+        resume: document.getElementById("resumeBtn"),
+        contact: document.getElementById("contactBtn")
+      };
+
+      // get close buttons
+      var closeBtns = document.querySelectorAll(".x");
+
+      // display logic and dom manipulation
+      var toggleSection = function(section) {
+        var showSection = function() {
+          Object.keys(sections).forEach(function(i) {
+            sections[i].dataset.toggle = false;
+          });
+          sections[section].dataset.toggle = true;
+        };
+        return showSection;
+      };
+
+      // add event listeners
+      Object.keys(buttons).forEach(function(i) {
+        buttons[i].addEventListener("click", toggleSection(i));
+      });
+    </script>
+  </body>
+</html>
