@@ -1,14 +1,17 @@
+// imports
 @import "reset";
 // @import "bs-imports";
 
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono");
 
+// vars
 $hero-bg-color: #6ad5fc;
 $work-bg-color: #75e070;
 $skills-bg-color: #fff65b;
 $resume-bg-color: #ea863a;
 $contact-bg-color: #d35d63;
 
+// global
 :root {
   font-size: 10px;
 }
@@ -20,20 +23,63 @@ body {
   overflow: hidden;
 }
 
-.main {
-  width: 70%;
-  height: 100%;
-}
-
 section {
-  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 300ms ease-in-out;
+  opacity: 1;
   height: 100%;
-  padding: 2.5vh 2.5vw;
-  &[data-toggle="true"] {
-    display: block;
+  padding: calc(2.5vh + 50px) 2.5vw;
+  &[data-toggle="false"] {
+    opacity: 0;
   }
 }
 
+.main {
+  width: 70%;
+  height: 100%;
+  position: relative;
+}
+
+.x {
+  // close icon
+  position: absolute;
+  top: 2.5vh;
+  left: 2.5vh;
+  width: 25px;
+  height: 25px;
+  z-index: 5;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2.5px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    transition: background-color 200ms;
+  }
+  &::before {
+    transform: translateY(-50%) rotate(45deg);
+  }
+  &::after {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover::before,
+  &:hover::after {
+    background-color: #fff;
+  }
+}
+
+// scoped
 nav {
   width: 30%;
   height: 100%;
@@ -96,8 +142,8 @@ nav {
     li:nth-of-type(2) {
       margin: 2.5vw;
     }
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: "";
       display: block;
       height: 2px;

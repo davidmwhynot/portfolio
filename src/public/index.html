@@ -57,18 +57,22 @@
           <img src="media/mockup3.png" alt="iPhone sample design mockup 3" />
         </div>
       </section>
+
       <section id="work" class="work" data-toggle="false">
         <i class="x"></i>
         <h1>Work</h1>
       </section>
+
       <section id="skills" class="skills" data-toggle="false">
         <i class="x"></i>
         <h1>Skills</h1>
       </section>
+
       <section id="resume" class="resume" data-toggle="false">
         <i class="x"></i>
         <h1>Résumé</h1>
       </section>
+
       <section id="contact" class="contact" data-toggle="false">
         <i class="x"></i>
         <h1>Contact</h1>
@@ -105,19 +109,21 @@
       var closeBtns = document.querySelectorAll(".x");
 
       // display logic and dom manipulation
-      var toggleSection = function(section) {
-        var showSection = function() {
+      function toggleSection(section) {
+        return function() {
           Object.keys(sections).forEach(function(i) {
             sections[i].dataset.toggle = false;
           });
           sections[section].dataset.toggle = true;
         };
-        return showSection;
-      };
+      }
 
       // add event listeners
-      Object.keys(buttons).forEach(function(i) {
-        buttons[i].addEventListener("click", toggleSection(i));
+      Object.keys(buttons).forEach(function(btn) {
+        buttons[btn].addEventListener("click", toggleSection(btn));
+      });
+      closeBtns.forEach(function(btn) {
+        btn.addEventListener("click", toggleSection("hero"));
       });
     </script>
   </body>
