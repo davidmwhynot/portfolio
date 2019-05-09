@@ -4,6 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/media/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/media/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/media/icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/media/icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/media/icons/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/media/icons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="/media/icons/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta
+      name="msapplication-TileImage"
+      content="/media/icons/mstile-144x144.png"
+    />
+    <meta
+      name="msapplication-config"
+      content="/media/icons/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -13,71 +56,332 @@
     />
     <link
       rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- <link
+      rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
       integrity="rCcl0/HQvbvpTrAC/9W17ZQ8hWQl3IaM/oJPOo8pJpBXRGPrTw9zaYtrsPeFDvfV"
       crossorigin="anonymous"
-    />
+    /> -->
 
-    <title>Document</title>
+    <title>David Whynot's Portfolio</title>
   </head>
 
   <body>
+    <!-- <div id="ar"></div> -->
     <div class="main">
       <section id="hero" class="hero" data-toggle="true">
-        <svg src="logo.svg" class="hero-img"></svg>
+        <div class="section-container">
+          <svg src="logo.svg" class="hero-img"></svg>
 
-        <div>
-          <ul>
-            <li>
-              <a href="https://github.com/davidmwhynot" target="_blank">
-                <svg src="github.svg"></svg>
-              </a>
-            </li>
-            <li>
-              <a href="https://codepen.io/davidmwhynot" target="_blank">
-                <svg src="codepen.svg"></svg>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/david-whynot"
-                target="_blank"
-              >
-                <svg src="linkedin.svg"></svg>
-              </a>
-            </li>
-          </ul>
-        </div>
+          <div class="social">
+            <div class="line"></div>
+            <a href="https://github.com/davidmwhynot" target="_blank">
+              <svg src="github.svg"></svg>
+            </a>
+            <a href="https://codepen.io/davidmwhynot" target="_blank">
+              <svg src="codepen.svg"></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/david-whynot" target="_blank">
+              <svg src="linkedin.svg"></svg>
+            </a>
+            <div class="line"></div>
+          </div>
 
-        <h1>Full Stack Web Developer</h1>
+          <h1>Full Stack Web Developer</h1>
 
-        <div class="images">
-          <img src="media/mockup1.png" alt="iPhone sample design mockup 1" />
-          <img src="media/mockup2.png" alt="iPhone sample design mockup 2" />
-          <img src="media/mockup3.png" alt="iPhone sample design mockup 3" />
+          <div class="images">
+            <img src="media/mockup1.png" alt="iPhone sample design mockup 1" />
+            <img src="media/mockup2.png" alt="iPhone sample design mockup 2" />
+            <img src="media/mockup3.png" alt="iPhone sample design mockup 3" />
+          </div>
         </div>
       </section>
 
       <section id="work" class="work" data-toggle="false">
         <i class="x"></i>
-        <h1>Work</h1>
+        <div class="section-container">
+          <h1>My Work</h1>
+          <div class="work-container">
+            <div class="row mb-5">
+              <div class="col-xl-4 align-self-center">
+                <div class="row mb-3 mb-xl-0">
+                  <div class="col-3 col-xl-4 align-self-end">
+                    <img
+                      src="https://picsum.photos/1080/1920?random&1"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col-9 col-xl-8">
+                    <img
+                      src="https://picsum.photos/1920/1080?random&2"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8">
+                <h1>Project Title</h1>
+                <div class="row">
+                  <div class="col-sm">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Dolorum tempore, ullam voluptates inventore facere odit
+                      libero excepturi ad alias reprehenderit.
+                      <a href="#">Read more.</a>
+                    </p>
+                  </div>
+                  <div class="col-sm">
+                    <div class="row">
+                      <div class="col">
+                        <h2>Front-End</h2>
+                        <ul>
+                          <li>React</li>
+                          <li>Sass</li>
+                          <li>Bootstrap 4</li>
+                        </ul>
+                      </div>
+                      <div class="col">
+                        <h2>Back-End</h2>
+                        <ul>
+                          <li>Ubuntu</li>
+                          <li>Nginx</li>
+                          <li>Node + Express</li>
+                          <li>MongoDB</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="button mr-2">View Demo</a>
+                <span><i class="fa fa-eye-slash"></i> Source private</span>
+              </div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-xl-4 align-self-center">
+                <div class="row mb-3 mb-xl-0">
+                  <div class="col-3 col-xl-4 align-self-end">
+                    <img
+                      src="https://picsum.photos/1080/1920?random&3"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col-9 col-xl-8">
+                    <img
+                      src="https://picsum.photos/1920/1080?random&4"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8">
+                <h1>Project Title</h1>
+                <div class="row">
+                  <div class="col-sm">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Dolorum tempore, ullam voluptates inventore facere odit
+                      libero excepturi ad alias reprehenderit.
+                      <a href="#">Read more.</a>
+                    </p>
+                  </div>
+                  <div class="col-sm">
+                    <div class="row">
+                      <div class="col">
+                        <h2>Front-End</h2>
+                        <ul>
+                          <li>React</li>
+                          <li>Sass</li>
+                          <li>Bootstrap 4</li>
+                        </ul>
+                      </div>
+                      <div class="col">
+                        <h2>Back-End</h2>
+                        <ul>
+                          <li>Ubuntu</li>
+                          <li>Nginx</li>
+                          <li>Node + Express</li>
+                          <li>MongoDB</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="button mr-2">View Demo</a>
+                <span><i class="fa fa-eye-slash"></i> Source private</span>
+              </div>
+            </div>
+            <div class="row mb-5">
+              <div class="col-xl-4 align-self-center">
+                <div class="row mb-3 mb-xl-0">
+                  <div class="col-3 col-xl-4 align-self-end">
+                    <img
+                      src="https://picsum.photos/1080/1920?random&5"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col-9 col-xl-8">
+                    <img
+                      src="https://picsum.photos/1920/1080?random&6"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8">
+                <h1>Project Title</h1>
+                <div class="row">
+                  <div class="col-sm">
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Dolorum tempore, ullam voluptates inventore facere odit
+                      libero excepturi ad alias reprehenderit.
+                      <a href="#">Read more.</a>
+                    </p>
+                  </div>
+                  <div class="col-sm">
+                    <div class="row">
+                      <div class="col">
+                        <h2>Front-End</h2>
+                        <ul>
+                          <li>React</li>
+                          <li>Sass</li>
+                          <li>Bootstrap 4</li>
+                        </ul>
+                      </div>
+                      <div class="col">
+                        <h2>Back-End</h2>
+                        <ul>
+                          <li>Ubuntu</li>
+                          <li>Nginx</li>
+                          <li>Node + Express</li>
+                          <li>MongoDB</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="button mr-2">View Demo</a>
+                <span><i class="fa fa-eye-slash"></i> Source private</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="skills" class="skills" data-toggle="false">
         <i class="x"></i>
-        <h1>Skills</h1>
+        <div class="section-container">
+          <h1>Skills</h1>
+					<div class="skills-container">
+						<h1>Front-End</h1>
+						<div class="row justify-content-between">
+							<div class="col">
+								<h2>Design</h2>
+								<ul>
+									<li>Adobe Photoshop</li>
+									<li>Adobe Illustrator</li>
+									<li>Figma</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h2>HTML/CSS</h2>
+								<ul>
+									<li>Sass</li>
+									<li>Bootstrap 3 & 4</li>
+									<li>CSS BEM</li>
+									<li>CSS Animations</li>
+									<li>HTML Email Templating</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h2>JavaScript</h2>
+								<ul>
+									<li>React</li>
+									<li>Preact</li>
+									<li>Redux</li>
+									<li>jQuery</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h2>Tooling</h2>
+								<ul>
+									<li>Webpack</li>
+									<li>Gulp</li>
+								</ul>
+							</div>
+						</div>
+						<h1>Back-End</h1>
+						<div class="row justify-content-between">
+							<div class="col">
+								<h2>Languages</h2>
+								<ul>
+									<li>Node.js</li>
+									<li>PHP</li>
+									<li>Java</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h2>Databases</h2>
+								<ul>
+									<li>MySQL</li>
+									<li>MongoDB</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h2>System Administration</h2>
+								<ul>
+									<li>Ubuntu Server</li>
+									<li>Nginx</li>
+									<li>Apache</li>
+								</ul>
+							</div>
+							<div class="col">
+								<h2>Node.js</h2>
+								<ul>
+									<li>TypeScript</li>
+									<li>Express.js</li>
+									<li>Passport</li>
+									<li>Jest</li>
+								</ul>
+							</div>
+						</div>
+						<h1>Other</h1>
+						<div class="row">
+							<div class="col">
+								<ul>
+									<li>Git & Github</li>
+									<li>Agile Development Methodology</li>
+									<li>
+										Automated Build and Deploy With Gulp, Git Hooks, & Shell Scripts
+									</li>
+									<li>Stripe API</li>
+									<li>Web Scraping With Puppeteer</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+        </div>
       </section>
 
       <section id="resume" class="resume" data-toggle="false">
         <i class="x"></i>
-        <h1>Résumé</h1>
+        <div class="section-container">
+          <h1>Résumé</h1>
+        </div>
       </section>
 
       <section id="contact" class="contact" data-toggle="false">
         <i class="x"></i>
-        <h1>Contact</h1>
+        <div class="section-container">
+          <h1>Contact</h1>
+        </div>
       </section>
     </div>
+
     <nav>
       <ul>
         <li id="workBtn"><a>My Work</a></li>
@@ -120,11 +424,37 @@
 
       // add event listeners
       Object.keys(buttons).forEach(function(btn) {
-        buttons[btn].addEventListener("click", toggleSection(btn));
+        buttons[btn].addEventListener("click", function() {
+          sections[btn].dataset.toggle === "true"
+            ? toggleSection("hero")()
+            : toggleSection(btn)();
+        });
       });
       closeBtns.forEach(function(btn) {
         btn.addEventListener("click", toggleSection("hero"));
       });
+
+      // dev
+      // const delay = 10; // Your delay here
+      //
+      // const originalResize = evt => {
+      //   console.log(window.innerWidth / window.innerHeight); // Your resize function here
+      // };
+      //
+      // (() => {
+      //   resizeTaskId = null;
+      //
+      //   window.addEventListener("resize", evt => {
+      //     if (resizeTaskId !== null) {
+      //       clearTimeout(resizeTaskId);
+      //     }
+      //
+      //     resizeTaskId = setTimeout(() => {
+      //       resizeTaskId = null;
+      //       originalResize(evt);
+      //     }, delay);
+      //   });
+      // })();
     </script>
   </body>
 </html>
