@@ -46,6 +46,8 @@ const Message = mongoose.model('Message', messageSchema);
 exports.handler = async function(event, context) {
 	try {
 		const req = JSON.parse(event.body);
+		console.log('req');
+		console.log(req);
 
 		const message = new Message();
 
