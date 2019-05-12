@@ -1,2 +1,4 @@
 dist
 NODE_MODULES
+.env
+.netlify

@@ -1,0 +1,4 @@
+[build]
+	port = 3000
+	publish = "dist/public"
+	functions = "src/functions"
