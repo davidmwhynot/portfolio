@@ -63,16 +63,14 @@ exports.handler = async function(event, context) {
 			from: 'noreply@TODO.com',
 			to: 'davidmwhynot@gmail.com',
 			subject: 'Portfolio Contact Form Submission',
-			html: `
-			<h1>Portfolio Contact Form Submission</h1>
-			<h3><b>Name:</b> ${message.name}</h3>
-			<h3><b>Email:</b> ${message.email}</h3>
-			<h3><b>Message:</b></h3>
-			<p>${message.message}</p>
-			<br /><br />
-			<h3><b>savedMessage:</b></h3>
-			<p>${JSON.stringify(savedMessage, null, 4)}</p>
-			`
+			html: `<h1>Portfolio Contact Form Submission</h1>
+<h3><b>Name:</b> ${message.name}</h3>
+<h3><b>Email:</b> ${message.email}</h3>
+<h3><b>Message:</b></h3>
+<p>${message.message}</p>
+<br /><br />
+<h3><b>savedMessage:</b></h3>
+<p>${JSON.stringify(savedMessage, null, 4)}</p>`
 		};
 
 		try {
