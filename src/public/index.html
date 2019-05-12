@@ -460,8 +460,8 @@
 						: toggleSection(btn)();
 				});
 			});
-			closeBtns.forEach(function(btn) {
-				btn.addEventListener('click', toggleSection('hero'));
+			Object.keys(closeBtns).forEach(function(btn) {
+				closeBtns[btn].addEventListener('click', toggleSection('hero'));
 			});
 
 			// contact form submit handler
@@ -475,19 +475,21 @@
 			contactButton.addEventListener('click', function() {
 				// get form data
 
-				var name = document.getElementById('contactFormName').value;
-				var email = document.getElementById('contactFormEmail').value;
-				var message = document.getElementById('contactFormMessage').value;
+				var formData = {
+					name: document.getElementById('contactFormName').value,
+					email: document.getElementById('contactFormEmail').value,
+					message: document.getElementById('contactFormMessage').value
+				};
 
 				// var formData = { name: name, email: email, message: message };
 
 				// send request to backend
 				fetch('/contact', {
 					method: 'POST',
-					body: JSON.stringify({ name, email, message }),
+					body: JSON.stringify(formData),
 					headers: { 'Content-Type': 'application/json' }
 				})
-					.then(res => {
+					.then(function(res) {
 						if (res.ok) {
 							// TODO: add success to alert box
 							console.log('submission success');
@@ -495,8 +497,7 @@
 							// TODO: add error to alert box
 							console.log('submission failed');
 						}
-					})
-					.catch(err => {
+					})["catch"](function(err) {
 						// TODO: add error to alert box
 						console.log('submission failed');
 						console.error(err);
