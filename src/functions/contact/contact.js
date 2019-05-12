@@ -55,7 +55,9 @@ exports.handler = async function(event, context) {
 		message.email = req.email;
 		message.message = req.message;
 
+		console.log('saving message... message: ', message);
 		const savedMessage = await message.save();
+		console.log('message saved! savedMessage:', savedMessage);
 
 		const mail = {
 			from: 'noreply@TODO.com',
@@ -74,6 +76,7 @@ exports.handler = async function(event, context) {
 		};
 
 		try {
+			console.log('sending email... email:', mail);
 			const mailInfo = await mailer.sendMail(mail);
 
 			if (!(mailInfo.message === 'success')) {
@@ -82,6 +85,8 @@ exports.handler = async function(event, context) {
 				);
 				console.log('mail:', mail);
 				console.log('mailInfo:', mailInfo);
+			} else {
+				console.log('email sent! mailInfo:', mailInfo);
 			}
 		} catch (err) {
 			console.error(err);
