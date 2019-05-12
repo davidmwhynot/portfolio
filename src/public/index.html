@@ -484,7 +484,7 @@
 				// var formData = { name: name, email: email, message: message };
 
 				// send request to backend
-				fetch('/contact', {
+				fetch('/.netlify/functions/contact', {
 					method: 'POST',
 					body: JSON.stringify(formData),
 					headers: { 'Content-Type': 'application/json' }
@@ -497,7 +497,8 @@
 							// TODO: add error to alert box
 							console.log('submission failed');
 						}
-					})["catch"](function(err) {
+					})
+					['catch'](function(err) {
 						// TODO: add error to alert box
 						console.log('submission failed');
 						console.error(err);
