@@ -1,1 +1,15 @@
 # /contact /.netlify/functions/contact 200
+http://davidwhynot.com/ https://davidwhynot.com/ 301!
+http://davidwhynot.com/* https://davidwhynot.com/ 301!
+http://*.davidwhynot.com/ https://davidwhynot.com/ 301!
+http://*.davidwhynot.com/* https://davidwhynot.com/ 301!
+
+http://davidwhynot.me/ https://davidwhynot.com/ 301!
+http://davidwhynot.me/* https://davidwhynot.com/ 301!
+http://*.davidwhynot.me/ https://davidwhynot.com/ 301!
+http://*.davidwhynot.me/* https://davidwhynot.com/ 301!
+
+https://davidwhynot.me/ https://davidwhynot.com/ 301!
+https://davidwhynot.me/* https://davidwhynot.com/ 301!
+https://*.davidwhynot.me/ https://davidwhynot.com/ 301!
+https://*.davidwhynot.me/* https://davidwhynot.com/ 301!
