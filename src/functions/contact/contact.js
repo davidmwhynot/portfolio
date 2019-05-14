@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
 const sendgrid = require('nodemailer-sendgrid-transport');
+const { escape, isEmail, normalizeEmail } = require('validator');
 
 // config
 const Schema = mongoose.Schema;
@@ -31,8 +32,7 @@ const messageSchema = new Schema({
 		type: String,
 		required: true,
 		trim: true,
-		lowercase: true,
-		match: /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+		lowercase: true
 	},
 	message: {
 		type: String,
@@ -49,11 +49,22 @@ exports.handler = async function(event, context) {
 		console.log('req');
 		console.log(req);
 
+		if (!(req.subject === 'placeholder')) {
+			throw new Error('Invalid honeypot.');
+		}
+
 		const message = new Message();
 
-		message.name = req.name;
-		message.email = req.email;
-		message.message = req.message;
+		const checkEmail = isEmail(req.email);
+
+		if (checkEmail) {
+			message.email = normalizeEmail(req.email);
+		} else {
+			throw new Error('Invalid email address.');
+		}
+
+		message.name = escape(req.name);
+		message.message = escape(req.message);
 
 		console.log('saving message... message: ', message);
 		const savedMessage = await message.save();

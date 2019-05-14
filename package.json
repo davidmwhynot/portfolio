@@ -24,7 +24,8 @@
     "gulp-sourcemaps": "^2.6.5",
     "mongoose": "^5.5.7",
     "nodemailer": "^6.1.1",
-    "nodemailer-sendgrid-transport": "^0.2.0"
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "validator": "^10.11.0"
   },
   "devDependencies": {
     "prettier": "^1.17.0"
