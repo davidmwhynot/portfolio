@@ -397,6 +397,14 @@ nav {
 	}
 }
 
+@media (min-width: 1200px) {
+	.col-xl-12.mb-0 {
+		img {
+			height: 10%;
+		}
+	}
+}
+
 // /* DEV */
 // #ar {
 //   position: absolute;

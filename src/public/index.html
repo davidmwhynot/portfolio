@@ -58,36 +58,42 @@
 			href="https://fonts.gstatic.com/s/abel/v9/MwQ5bhbm2POE2V9BPQ.woff2"
 			type="font/woff2"
 			as="font"
+			crossorigin
 		/>
 		<link
 			rel="preload"
 			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1iIq129k.woff2"
 			type="font/woff2"
 			as="font"
+			crossorigin
 		/>
 		<link
 			rel="preload"
 			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1isq129k.woff2"
 			type="font/woff2"
 			as="font"
+			crossorigin
 		/>
 		<link
 			rel="preload"
 			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1iAq129k.woff2"
 			type="font/woff2"
 			as="font"
+			crossorigin
 		/>
 		<link
 			rel="preload"
 			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1iEq129k.woff2"
 			type="font/woff2"
 			as="font"
+			crossorigin
 		/>
 		<link
 			rel="preload"
 			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2"
 			type="font/woff2"
 			as="font"
+			crossorigin
 		/>
 
 		<!-- preload stylesheets -->
@@ -315,13 +321,13 @@
 								</div>
 								<div class="col-xl-4 align-self-center">
 									<div class="row mt-5 mt-xl-0 ml-0 ml-xl-5">
-										<div class="col-3 col-xl-4 align-self-end">
+										<div class="col-3 col-xl-12 mb-0 mb-xl-5 align-self-end">
 											<img
 												src="https://picsum.photos/1080/1920?random&1"
 												alt=""
 											/>
 										</div>
-										<div class="col-9 col-xl-8">
+										<div class="col-9 col-xl-12">
 											<img
 												src="https://picsum.photos/1920/1080?random&2"
 												alt=""
@@ -376,8 +382,8 @@
 								</div>
 
 								<div class="col-xl-4 align-self-center">
-									<div class="row mt-5 mt-xl-0 ml-0 ml-xl-5">
-										<div class="col align-self-end">
+									<div class="d-flex mt-5 mt-xl-0 ml-0 ml-xl-5">
+										<div class="align-self-end">
 											<img
 												src="media/starium.webp"
 												alt="StariumXCV Federations Module"
@@ -578,8 +584,6 @@
 							mockup2: document.querySelectorAll('.mockup-2'),
 							mockup3: document.querySelectorAll('.mockup-3')
 						};
-
-						console.log(mockups);
 
 						Object.keys(mockups).forEach(function(mock) {
 							for (var i = 1; i < mockups[mock].length; ++i) {
