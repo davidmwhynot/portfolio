@@ -6,6 +6,7 @@ const embedSvg = require('gulp-embed-svg');
 const srcmaps = require('gulp-sourcemaps');
 
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
@@ -36,11 +37,10 @@ const images = () => {
 		.src([
 			'src/public/media/**/*.png',
 			'src/public/media/**/*.jpg',
-			'src/public/media/**/*.jpeg',
-			'src/public/media/**/*.gif',
-			'src/public/media/**/*.svg'
+			'src/public/media/**/*.jpeg'
 		])
 		.pipe(imagemin())
+		.pipe(webp())
 		.pipe(gulp.dest('dist/public/media'));
 };
 
@@ -50,9 +50,7 @@ const media = () => {
 			'src/public/media/**/*',
 			'!src/public/media/**/*.png',
 			'!src/public/media/**/*.jpg',
-			'!src/public/media/**/*.jpeg',
-			'!src/public/media/**/*.gif',
-			'!src/public/media/**/*.svg'
+			'!src/public/media/**/*.jpeg'
 		])
 		.pipe(gulp.dest('dist/public/media'));
 };
