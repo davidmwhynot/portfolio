@@ -47,6 +47,61 @@
 		/>
 		<meta name="theme-color" content="#ffffff" />
 
+		<!-- preload images -->
+		<link rel="preload" href=media/mockups/1/200x150.png"" as="image">
+		<link rel="preload" href="media/mockups/2/200x150.png" as="image" />
+		<link rel="preload" href="media/mockups/3/200x150.png" as="image" />
+
+		<!-- preload fonts -->
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/abel/v9/MwQ5bhbm2POE2V9BPQ.woff2"
+			type="font/woff2"
+			as="font"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1iIq129k.woff2"
+			type="font/woff2"
+			as="font"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1isq129k.woff2"
+			type="font/woff2"
+			as="font"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1iAq129k.woff2"
+			type="font/woff2"
+			as="font"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1iEq129k.woff2"
+			type="font/woff2"
+			as="font"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.gstatic.com/s/ibmplexmono/v4/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2"
+			type="font/woff2"
+			as="font"
+		/>
+
+		<!-- preload stylesheets -->
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css?family=Abel|IBM+Plex+Mono"
+			as="style"
+		/>
+		<link rel="preload" href="style.css" as="style" />
+
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Abel|IBM+Plex+Mono"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<link
 			rel="stylesheet"
@@ -94,9 +149,113 @@
 					<h1>Full Stack Web Developer</h1>
 
 					<div class="images">
-						<img src="media/mockup1.png" alt="iPhone sample design mockup 1" />
-						<img src="media/mockup2.png" alt="iPhone sample design mockup 2" />
-						<img src="media/mockup3.png" alt="iPhone sample design mockup 3" />
+						<img
+							src="media/mockups/1/200x150.png"
+							alt="iPhone sample design mockup 1"
+							class="mockup-1 sz-200x150"
+							decoding="sync"
+							importance="high"
+						/>
+						<img
+							src="media/mockups/1/400x300.png"
+							alt="iPhone sample design mockup 1"
+							class="mockup-1 sz-400x300"
+							decoding="async"
+							importance="high"
+						/>
+						<img
+							src="media/mockups/1/800x600.png"
+							alt="iPhone sample design mockup 1"
+							class="mockup-1 sz-800x600"
+							decoding="sync"
+							importance="low"
+						/>
+						<img
+							src="media/mockups/1/1600x1200.png"
+							alt="iPhone sample design mockup 1"
+							class="mockup-1 sz-1600x1200"
+							decoding="sync"
+							importance="low"
+						/>
+						<!-- <img
+							src="media/mockups/1/3200x2400.png"
+							alt="iPhone sample design mockup 1"
+							class="mockup-1 sz-3200x2400"
+							decoding="sync"
+							importance="low"
+						/> -->
+
+						<img
+							src="media/mockups/2/200x150.png"
+							alt="iPhone sample design mockup 2"
+							class="mockup-2 sz-200x150"
+							decoding="sync"
+							importance="high"
+						/>
+						<img
+							src="media/mockups/2/400x300.png"
+							alt="iPhone sample design mockup 2"
+							class="mockup-2 sz-400x300"
+							decoding="async"
+							importance="high"
+						/>
+						<img
+							src="media/mockups/2/800x600.png"
+							alt="iPhone sample design mockup 2"
+							class="mockup-2 sz-800x600"
+							decoding="sync"
+							importance="low"
+						/>
+						<img
+							src="media/mockups/2/1600x1200.png"
+							alt="iPhone sample design mockup 2"
+							class="mockup-2 sz-1600x1200"
+							decoding="sync"
+							importance="low"
+						/>
+						<!-- <img
+							src="media/mockups/2/3200x2400.png"
+							alt="iPhone sample design mockup 2"
+							class="mockup-2 sz-3200x2400"
+							decoding="sync"
+							importance="low"
+						/> -->
+
+						<img
+							src="media/mockups/3/200x150.png"
+							alt="iPhone sample design mockup 3"
+							class="mockup-3 sz-200x150"
+							decoding="sync"
+							importance="high"
+						/>
+						<img
+							src="media/mockups/3/400x300.png"
+							alt="iPhone sample design mockup 3"
+							class="mockup-3 sz-400x300"
+							decoding="async"
+							importance="high"
+						/>
+						<img
+							src="media/mockups/3/800x600.png"
+							alt="iPhone sample design mockup 3"
+							class="mockup-3 sz-800x600"
+							decoding="sync"
+							importance="low"
+						/>
+						<img
+							src="media/mockups/3/1600x1200.png"
+							alt="iPhone sample design mockup 3"
+							class="mockup-3 sz-1600x1200"
+							decoding="sync"
+							importance="low"
+						/>
+						<!-- <img
+							src="media/mockups/3/3200x2400.png"
+							alt="iPhone sample design mockup 3"
+							class="mockup-3 sz-3200x2400"
+							decoding="sync"
+							importance="low"
+						/> -->
 					</div>
 				</div>
 			</section>
@@ -210,63 +369,6 @@
 												<ul>
 													<li>PHP</li>
 													<li>MySQL</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-								<a href="#" class="button mr-2">View Demo</a>
-								<span>
-									<i class="fa fa-eye-slash"></i>
-									Source private
-								</span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xl-4 align-self-center">
-								<div class="row mb-3 mb-xl-0">
-									<div class="col-3 col-xl-4 align-self-end">
-										<img
-											src="https://picsum.photos/1080/1920?random&5"
-											alt=""
-										/>
-									</div>
-									<div class="col-9 col-xl-8">
-										<img
-											src="https://picsum.photos/1920/1080?random&6"
-											alt=""
-										/>
-									</div>
-								</div>
-							</div>
-							<div class="col-xl-8">
-								<h1>Project Title</h1>
-								<div class="row">
-									<div class="col-sm">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Dolorum tempore, ullam voluptates inventore facere odit
-											libero excepturi ad alias reprehenderit.
-											<a href="#">Read more.</a>
-										</p>
-									</div>
-									<div class="col-sm">
-										<div class="row">
-											<div class="col">
-												<h2>Front-End</h2>
-												<ul>
-													<li>React</li>
-													<li>Sass</li>
-													<li>Bootstrap 4</li>
-												</ul>
-											</div>
-											<div class="col">
-												<h2>Back-End</h2>
-												<ul>
-													<li>Ubuntu</li>
-													<li>Nginx</li>
-													<li>Node + Express</li>
-													<li>MongoDB</li>
 												</ul>
 											</div>
 										</div>
@@ -460,6 +562,29 @@
 				window.addEventListener(
 					'load',
 					function() {
+						// hide low res images
+						var mockups = {
+							mockup1: document.querySelectorAll('.mockup-1'),
+							mockup2: document.querySelectorAll('.mockup-2'),
+							mockup3: document.querySelectorAll('.mockup-3')
+						};
+
+						console.log(mockups);
+
+						Object.keys(mockups).forEach(function(mock) {
+							for (var i = 1; i < mockups[mock].length; ++i) {
+								if (mockups[mock][i].complete) {
+									mockups[mock][i].parentNode.removeChild(mockups[mock][i - 1]);
+								} else {
+									mockups[mock][i].addEventListener('load', function() {
+										mockups[mock][i].parentNode.removeChild(
+											mockups[mock][i - 1]
+										);
+									});
+								}
+							}
+						});
+
 						// set subject field name
 						var contactSubject = document.getElementById('contactFormSubject');
 						contactSubject.name = getRandomString();

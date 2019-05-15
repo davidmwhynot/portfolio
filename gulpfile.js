@@ -5,6 +5,8 @@ const embedSvg = require('gulp-embed-svg');
 
 const srcmaps = require('gulp-sourcemaps');
 
+const imagemin = require('gulp-imagemin');
+
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 
@@ -15,7 +17,7 @@ const AUTOPREFIXER_BROWSERS = ['> 1%', 'last 2 versions'];
 gulp.task('html', () => {
 	return gulp
 		.src('src/public/*.html')
-		.pipe(embedSvg({ root: './src/public/media' }))
+		.pipe(embedSvg({ root: './dist/public/media' }))
 		.pipe(gulp.dest('dist/public'));
 });
 
@@ -29,15 +31,42 @@ gulp.task('sass', () => {
 		.pipe(gulp.dest('dist/public'));
 });
 
-gulp.task('media', () => {
-	return gulp.src('src/public/media/**/*').pipe(gulp.dest('dist/public/media'));
-});
+const images = () => {
+	return gulp
+		.src([
+			'src/public/media/**/*.png',
+			'src/public/media/**/*.jpg',
+			'src/public/media/**/*.jpeg',
+			'src/public/media/**/*.gif',
+			'src/public/media/**/*.svg'
+		])
+		.pipe(imagemin())
+		.pipe(gulp.dest('dist/public/media'));
+};
+
+const media = () => {
+	return gulp
+		.src([
+			'src/public/media/**/*',
+			'!src/public/media/**/*.png',
+			'!src/public/media/**/*.jpg',
+			'!src/public/media/**/*.jpeg',
+			'!src/public/media/**/*.gif',
+			'!src/public/media/**/*.svg'
+		])
+		.pipe(gulp.dest('dist/public/media'));
+};
+
+gulp.task('media', gulp.parallel(images, media));
 
 gulp.task('redirects', () => {
 	return gulp.src('src/_redirects').pipe(gulp.dest('dist/public'));
 });
 
-gulp.task('build', gulp.parallel('sass', 'media', 'html', 'redirects'));
+gulp.task(
+	'build',
+	gulp.parallel(gulp.series('media', 'html'), 'sass', 'redirects')
+);
 
 gulp.task(
 	'default',

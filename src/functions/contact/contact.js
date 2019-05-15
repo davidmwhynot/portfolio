@@ -12,7 +12,6 @@ const uri = `mongodb+srv://${
 const SENDGRID_CONFIG = {
 	auth: {
 		api_user: process.env.PORTFOLIO_SENDGRID_USER,
-		// api_user: 'asdf',
 		api_key: process.env.PORTFOLIO_SENDGRID_KEY
 	}
 };

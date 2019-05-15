@@ -2,9 +2,9 @@
 @import 'reset';
 // @import "bs-imports";
 
-@import url('https://fonts.googleapis.com/css?family=Abel');
+// @import url('https://fonts.googleapis.com/css?family=Abel|IBM+Plex+Mono');
 // @import url("https://fonts.googleapis.com/css?family=Raleway");
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
+// @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono');
 
 /* VARS */
 $hero-bg-color: #6ad5fc;
@@ -239,20 +239,35 @@ nav {
 		img {
 			position: absolute;
 			height: 100%;
-			&:nth-child(1) {
-				top: 0;
-				left: 0;
-			}
-			&:nth-child(2) {
-				top: 0;
-				left: 0;
-				right: 0;
-				margin: 0 auto;
-			}
-			&:nth-child(3) {
-				top: 0;
-				right: 0;
-			}
+		}
+		.mockup-1 {
+			top: 0;
+			left: 0;
+		}
+		.mockup-2 {
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+		.mockup-3 {
+			top: 0;
+			right: 0;
+		}
+		.sz-200x150 {
+			z-index: 1;
+		}
+		.sz-400x300 {
+			z-index: 2;
+		}
+		.sz-800x600 {
+			z-index: 3;
+		}
+		.sz-1600x1200 {
+			z-index: 4;
+		}
+		.sz-3200x2400 {
+			z-index: 5;
 		}
 	}
 }
