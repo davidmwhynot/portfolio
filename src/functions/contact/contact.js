@@ -1,24 +1,25 @@
 // import
 const mongoose = require('mongoose');
-const nodemailer = require('nodemailer');
-const sendgrid = require('nodemailer-sendgrid-transport');
+const mailer = require('@sendgrid/mail');
 const { escape, isEmail, normalizeEmail } = require('validator');
+const { inspect } = require('util');
 
 // config
 const Schema = mongoose.Schema;
 const uri = `mongodb+srv://${
 	process.env.PORTFOLIO_DB_LOGIN
-}.mongodb.net/test?retryWrites=true`;
-const SENDGRID_CONFIG = {
-	auth: {
-		api_user: process.env.PORTFOLIO_SENDGRID_USER,
-		api_key: process.env.PORTFOLIO_SENDGRID_KEY
-	}
-};
+}.mongodb.net/test?retryWrites=true&w=majority`;
+// const SENDGRID_CONFIG = {
+// 	auth: {
+// 		api_user: process.env.PORTFOLIO_SENDGRID_USER,
+// 		api_key: process.env.PORTFOLIO_SENDGRID_KEY
+// 	}
+// };
+mailer.setApiKey(process.env.PORTFOLIO_SENDGRID_KEY);
 
 // connect
 mongoose.connect(uri, { useNewUrlParser: true });
-const mailer = nodemailer.createTransport(sendgrid(SENDGRID_CONFIG));
+// const mailer = nodemailer.createTransport(sendgrid(SENDGRID_CONFIG));
 
 // message model
 const messageSchema = new Schema({
@@ -70,7 +71,7 @@ exports.handler = async function(event, context) {
 		console.log('message saved! savedMessage:', savedMessage);
 
 		const mail = {
-			from: 'noreply@TODO.com',
+			from: 'noreply@davidwhynot.com',
 			to: 'davidmwhynot@gmail.com',
 			subject: 'Portfolio Contact Form Submission',
 			html: `<h1>Portfolio Contact Form Submission</h1>
@@ -85,14 +86,15 @@ exports.handler = async function(event, context) {
 
 		try {
 			console.log('sending email... email:', mail);
-			const mailInfo = await mailer.sendMail(mail);
+			const mailInfo = await mailer.send(mail);
 
-			if (!(mailInfo.message === 'success')) {
+			if (!(mailInfo[0].statusMessage === 'Accepted')) {
 				console.warn(
 					'problem sending contact form notification email... non-critical'
 				);
 				console.log('mail:', mail);
 				console.log('mailInfo:', mailInfo);
+				console.log('\n\n');
 			} else {
 				console.log('email sent! mailInfo:', mailInfo);
 			}

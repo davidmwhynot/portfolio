@@ -1,35 +1,34 @@
 {
-  "name": "davidwhynot.me",
-  "version": "1.0.0",
-  "description": "David Whynot's portfolio website",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/davidmwhynot/portfolio.git"
-  },
-  "author": "David Whynot",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/davidmwhynot/portfolio/issues"
-  },
-  "homepage": "https://github.com/davidmwhynot/portfolio#readme",
-  "dependencies": {
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-embed-svg": "^1.1.3",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-webp": "^4.0.1",
-    "mongoose": "^5.5.7",
-    "nodemailer": "^6.1.1",
-    "nodemailer-sendgrid-transport": "^0.2.0",
-    "validator": "^10.11.0"
-  },
-  "devDependencies": {
-    "prettier": "^1.17.0"
-  }
+	"name": "davidwhynot.me",
+	"version": "1.0.0",
+	"description": "David Whynot's portfolio website",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/davidmwhynot/portfolio.git"
+	},
+	"author": "David Whynot",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/davidmwhynot/portfolio/issues"
+	},
+	"homepage": "https://github.com/davidmwhynot/portfolio#readme",
+	"dependencies": {
+		"@sendgrid/mail": "^6.4.0",
+		"gulp": "^4.0.0",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-embed-svg": "^1.1.3",
+		"gulp-imagemin": "^5.0.3",
+		"gulp-sass": "^4.0.2",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-webp": "^4.0.1",
+		"mongoose": "^5.5.7",
+		"validator": "^10.11.0"
+	},
+	"devDependencies": {
+		"prettier": "^1.17.0"
+	}
 }
