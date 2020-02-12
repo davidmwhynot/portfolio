@@ -71,7 +71,10 @@ gulp.task(
 	gulp.parallel(gulp.series('media', 'html'), 'sass', 'redirects')
 );
 
-gulp.task('build-prod', gulp.parallel('html', 'sass', 'redirects'));
+gulp.task(
+	'build-prod',
+	gulp.parallel(gulp.series(media, 'html'), 'sass', 'redirects')
+);
 
 gulp.task(
 	'default',
