@@ -33,19 +33,20 @@ gulp.task('sass', () => {
 });
 
 const images = () => {
-	gulp
-		.src('src/public/media/**/*.png')
+	gulp.src('src/public/media/**/*.png')
 		.pipe(imagemin())
 		.pipe(gulp.dest('dist/public/media'));
-	return gulp
-		.src([
-			'src/public/media/**/*.png',
-			'src/public/media/**/*.jpg',
-			'src/public/media/**/*.jpeg'
-		])
-		.pipe(imagemin())
-		.pipe(webp())
-		.pipe(gulp.dest('dist/public/media'));
+	return (
+		gulp
+			.src([
+				'src/public/media/**/*.png',
+				'src/public/media/**/*.jpg',
+				'src/public/media/**/*.jpeg'
+			])
+			.pipe(imagemin())
+			// .pipe(webp())
+			.pipe(gulp.dest('dist/public/media'))
+	);
 };
 
 const media = () => {

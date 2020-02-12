@@ -1,5 +1,6 @@
 dist
 NODE_MODULES
+node_modules
 .env
 .netlify
 .netlify-dev.sh
