@@ -43,24 +43,27 @@ const images = () => {
 				'src/public/media/**/*.jpg',
 				'src/public/media/**/*.jpeg'
 			])
-			.pipe(imagemin())
+			// .pipe(imagemin())
 			// .pipe(webp())
-			.pipe(gulp.dest('dist/public/media'))
+			.pipe(gulp.dest('minified-images'))
 	);
 };
+
+gulp.task('images', images);
 
 const media = () => {
 	return gulp
 		.src([
-			'src/public/media/**/*',
-			'!src/public/media/**/*.png',
-			'!src/public/media/**/*.jpg',
-			'!src/public/media/**/*.jpeg'
+			'src/public/media/**/*'
+			// 'minfied-images/**/*.*'
+			// '!src/public/media/**/*.png',
+			// '!src/public/media/**/*.jpg',
+			// '!src/public/media/**/*.jpeg'
 		])
 		.pipe(gulp.dest('dist/public/media'));
 };
 
-gulp.task('media', gulp.parallel(images, media));
+gulp.task('media', media);
 
 gulp.task('redirects', () => {
 	return gulp.src('src/_redirects').pipe(gulp.dest('dist/public'));
@@ -68,12 +71,12 @@ gulp.task('redirects', () => {
 
 gulp.task(
 	'build',
-	gulp.parallel(gulp.series('media', 'html'), 'sass', 'redirects')
+	gulp.parallel(gulp.series('images', 'media', 'html'), 'sass', 'redirects')
 );
 
 gulp.task(
 	'build-prod',
-	gulp.parallel(gulp.series(media, 'html'), 'sass', 'redirects')
+	gulp.parallel(gulp.series('media', 'html'), 'sass', 'redirects')
 );
 
 gulp.task(
