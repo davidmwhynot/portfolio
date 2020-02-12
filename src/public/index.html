@@ -10,7 +10,7 @@
 			name="description"
 			content="David Whynot's Portfolio. Full stack web developer. Offering freelance and contract web development services."
 		/>
-		<link rel="canonical" href="https://davidwhynot.com" />
+		<link rel="canonical" href="https://davidwhynot.me" />
 
 		<!-- Social Media -->
 		<meta property="twitter:card" content="summary_large_image" />
@@ -21,15 +21,15 @@
 		/>
 		<meta
 			property="twitter:image"
-			content="https://davidwhynot.com/media/logo.png?v=1"
+			content="https://davidwhynot.me/media/logo.png?v=1"
 		/>
 		<meta property="twitter:site" content="@davidmwhynot" />
 		<meta property="og:title" content="David Whynot's Portfolio" />
 		<meta property="og:type" content="company" />
-		<meta property="og:url" content="https://davidwhynot.com/index.html" />
+		<meta property="og:url" content="https://davidwhynot.me/index.html" />
 		<meta
 			property="og:image"
-			content="https://davidwhynot.com/media/logo.png?v=1"
+			content="https://davidwhynot.me/media/logo.png?v=1"
 		/>
 		<meta property="og:site_name" content="David Whynot" />
 		<meta
@@ -155,13 +155,13 @@
 			href="https://fonts.googleapis.com/css?family=Abel|IBM+Plex+Mono"
 			as="style"
 		/>
-		<link rel="preload" href="style.css?v=0" as="style" />
+		<link rel="preload" href="style.css?v=1" as="style" />
 
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css?family=Abel|IBM+Plex+Mono"
 		/>
-		<link rel="stylesheet" href="style.css?v=0" />
+		<link rel="stylesheet" href="style.css?v=1" />
 		<link
 			rel="stylesheet"
 			href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -593,6 +593,7 @@
 									<li>Javascript/ES6</li>
 									<li>React/Preact w/ Redux</li>
 									<li>Vue</li>
+									<li>Angular</li>
 									<li>HTML5/CSS/Sass</li>
 								</ul>
 							</div>
@@ -609,9 +610,9 @@
 								<h2>Frameworks/CMS</h2>
 								<ul>
 									<li>Express.js</li>
-									<li>Angular</li>
 									<li>Django</li>
 									<li>Wordpress</li>
+									<li>Qt</li>
 								</ul>
 							</div>
 							<div class="col">
@@ -668,6 +669,9 @@
 									<li>Git</li>
 									<li>Typescript</li>
 									<li>Lua</li>
+									vh = window.innerHeight * 0.01;
+									document.documentElement.style.setProperty(
+									'--vh', vh + 'px' );
 									<li>GraphQL</li>
 									<li>MySQL</li>
 									<li>MongoDB</li>
@@ -791,6 +795,23 @@
 				window.addEventListener(
 					'load',
 					function() {
+						// fix viewport height
+						var vh = window.innerHeight * 0.01;
+
+						document.documentElement.style.setProperty(
+							'--vh',
+							vh + 'px'
+						);
+
+						window.addEventListener('resize', function() {
+							var vhNew = window.innerHeight * 0.01;
+
+							document.documentElement.style.setProperty(
+								'--vh',
+								vhNew + 'px'
+							);
+						});
+
 						// hide low res images
 						var mockups = {
 							mockup1: document.querySelectorAll('.mockup-1'),
