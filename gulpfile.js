@@ -33,9 +33,9 @@ gulp.task('sass', () => {
 });
 
 const images = () => {
-	gulp.src('src/public/media/**/*.png')
-		.pipe(imagemin())
-		.pipe(gulp.dest('dist/public/media'));
+	// gulp.src('src/public/media/**/*.png')
+	// 	.pipe(imagemin())
+	// 	.pipe(gulp.dest('dist/public/media'));
 	return (
 		gulp
 			.src([
@@ -70,6 +70,8 @@ gulp.task(
 	'build',
 	gulp.parallel(gulp.series('media', 'html'), 'sass', 'redirects')
 );
+
+gulp.task('build-prod', gulp.parallel('html', 'sass', 'redirects'));
 
 gulp.task(
 	'default',
