@@ -92,33 +92,53 @@ textarea {
 	padding: 0;
 }
 
+.section-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: calc(100% - 8vw);
+
+	h1 {
+		margin-bottom: 0;
+	}
+}
+
 .main {
 	position: relative;
 }
 
 .button {
 	// all: unset;
+	margin: 0;
 	display: inline-block;
 	transition: transform 200ms, background-color 200ms !important;
 	border: none;
 	font-size: 1.25rem;
 	background-color: #000;
 	color: #fff !important;
-	padding: 1rem;
+	padding: 1rem 1.5rem;
 	&:hover {
 		// all: unset;
 		transform: translateY(-2px);
-		background-color: #333;
 		cursor: pointer;
 		text-decoration: none;
+		background-color: lighten(#000, 10%);
+	}
+
+	&-primary {
+		color: #000 !important;
+		background-color: $hero-bg-color;
+		&:hover {
+			background-color: darken($hero-bg-color, 10%);
+		}
 	}
 }
 
 // close icon
 .x {
 	position: absolute;
-	top: calc(2vw + 2vh);
-	right: calc(2vw + 2vh);
+	top: calc(10px + 2.5vh);
+	right: 4vw;
 	width: calc(2vw + 2vh);
 	height: calc(2vw + 2vh);
 	z-index: 5;
@@ -350,6 +370,10 @@ nav {
 	.resume-container {
 		overflow-y: scroll;
 		@include scrollbar;
+	}
+
+	small {
+		font-size: 0.75rem;
 	}
 }
 

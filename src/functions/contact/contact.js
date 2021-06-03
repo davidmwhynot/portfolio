@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const mailer = require('@sendgrid/mail');
 const { escape, isEmail, normalizeEmail } = require('validator');
-const { inspect } = require('util');
+// const { inspect } = require('util');
 
 // config
 const Schema = mongoose.Schema;
@@ -71,7 +71,7 @@ exports.handler = async function(event, context) {
 		console.log('message saved! savedMessage:', savedMessage);
 
 		const mail = {
-			from: 'noreply@davidwhynot.com',
+			from: 'noreply@davidwhynot.me',
 			to: 'davidmwhynot@gmail.com',
 			subject: 'Portfolio Contact Form Submission',
 			html: `<h1>Portfolio Contact Form Submission</h1>
@@ -100,6 +100,11 @@ exports.handler = async function(event, context) {
 			}
 		} catch (err) {
 			console.error(err);
+			if (err.response && err.response.body && err.response.body.errors) {
+				console.log('err.body.errors');
+				console.log(JSON.stringify(err.response.body.errors));
+				console.log();
+			}
 			console.warn(
 				'failed to send contact form notification email... non-critical'
 			);
